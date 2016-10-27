@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="usersHolder" class="com.primosoft.astman.core.ast.state.UsersHolder"/>
+    <bean id="channelHolder" class="com.primosoft.astman.core.ast.state.ChannelHolder"/>
+    <bean id="callsHolder" class="com.primosoft.astman.core.ast.state.CallsHolder"/>
+    <bean id="propertiesUtil" class="com.primosoft.astman.core.util.PropertiesUtil" init-method="loadFile"/>
+    <bean id="memoryLogScheduler" class="com.primosoft.astman.core.util.MemoryLogScheduler"
+          destroy-method="flushMemoryCounter"/>
+    <bean id="memoryConverter" class="com.primosoft.astman.core.util.MemoryConverter"/>
+
+    <bean id="serviceAspectLogger" class="com.primosoft.astman.core.db.aop.service.ServiceAspectLogger"/>
+    <bean id="daoAspectLogger" class="com.primosoft.astman.core.db.aop.dao.DaoAspectLogger"/>
+
+    <bean id="callWay" class="com.primosoft.astman.core.ast.way.CallWay"/>
+
+    <bean id="asteriskManagerEventPublisher"
+          class="com.primosoft.astman.core.ast.listener.AsteriskManagerEventPublisher"/>
+    <bean id="asteriskManagerEventListener" class="com.primosoft.astman.core.ast.listener.AsteriskManagerEventListener"
+          scope="prototype"/>
+
+    <bean id="operatorAlgorithmContext" class="com.primosoft.astman.core.ast.algorithm.OperatorAlgorithmContext"
+          scope="prototype"/>
+    <bean id="asIsOperatorAlgorithm" class="com.primosoft.astman.core.ast.algorithm.AsIsOperatorAlgorithm"/>
+    <bean id="allOperatorsOfGroupAlgorithm"
+          class="com.primosoft.astman.core.ast.algorithm.AllOperatorsOfGroupAlgorithm"/>
+    <bean id="loginedOperatorsOfGroupAlgorithm"
+          class="com.primosoft.astman.core.ast.algorithm.LoginedOperatorsOfGroupAlgorithm"/>
+    <bean id="freeOperatorsOfGroupAlgorithm"
+          class="com.primosoft.astman.core.ast.algorithm.FreeOperatorsOfGroupAlgorithm"/>
+    <bean id="dontSpeakOperatorsOfGroupAlgorithm"
+          class="com.primosoft.astman.core.ast.algorithm.DontSpeakOperatorsOfGroupAlgorithm"/>
+    <bean id="oldestFreeOperatorsOfGroupAlgorithm"
+          class="com.primosoft.astman.core.ast.algorithm.OldestFreeOperatorsOfGroupAlgorithm"/>
+
+    <bean id="callAlgorithmContext" class="com.primosoft.astman.core.ast.algorithm.CallAlgorithmContext"
+          scope="prototype"/>
+    <bean id="nextLinearCallAlgorithm" class="com.primosoft.astman.core.ast.algorithm.NextLinearCallAlgorithm"/>
+    <bean id="nextTopCallAlgorithm" class="com.primosoft.astman.core.ast.algorithm.NextTopCallAlgorithm"/>
+
+</beans>

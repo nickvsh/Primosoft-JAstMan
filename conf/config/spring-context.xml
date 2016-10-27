@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.primosoft.astman.core.db.dao"/>
+    <context:component-scan base-package="com.primosoft.astman.core.db.service"/>
+    <context:component-scan base-package="com.primosoft.astman.core.ast.listener"/>
+
+    <!-- Configure a default Validator as a Spring bean to make custom validation constraints work -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+    <!-- JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan">
+            <list>
+                <value>com.primosoft.astman.core.db.entity.ats</value>
+                <value>com.primosoft.astman.core.db.entity.dlr</value>
+            </list>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property value="${jpa.showSql}" name="showSql"/>
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}"
+                       value="${hibernate.format_sql}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}"
+                       value="${hibernate.use_sql_comments}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).DIALECT}"
+                       value="${hibernate.dialect}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).BATCH_VERSIONED_DATA}"
+                       value="${hibernate.jdbc.batch_versioned_data}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).STATEMENT_FETCH_SIZE}"
+                       value="${hibernate.jdbc.fetch_size}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).STATEMENT_BATCH_SIZE}"
+                       value="${hibernate.jdbc.batch_size}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).DEFAULT_BATCH_FETCH_SIZE}"
+                       value="${hibernate.default_batch_fetch_size}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).ORDER_UPDATES}"
+                       value="${hibernate.order_updates}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).ORDER_INSERTS}"
+                       value="${hibernate.order_inserts}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SECOND_LEVEL_CACHE}"
+                       value="${hibernate.cache.use_second_level_cache}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_QUERY_CACHE}"
+                       value="${hibernate.cache.use_query_cache}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_MINIMAL_PUTS}"
+                       value="${hibernate.cache.use_minimal_puts}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).CACHE_REGION_FACTORY}"
+                       value="${hibernate.cache.region.factory_class}"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.jpa.JpaTransactionManager"
+          p:entityManagerFactory-ref="entityManagerFactory"/>
+
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <tx:annotation-driven/>
+</beans>

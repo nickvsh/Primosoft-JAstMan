@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Profile for app on PostgreSQL with production connection pool -->
+    <beans profile="production">
+        <context:property-placeholder
+                location="config/db/postgresql.properties"
+                ignore-unresolvable="true"
+                system-properties-mode="OVERRIDE"
+        />
+        <bean id="dataSource"
+              destroy-method="close"
+              class="org.apache.commons.dbcp2.BasicDataSource"
+              p:driverClassName="${database.driverClassName}"
+              p:url="${database.url}"
+              p:username="${database.username}"
+              p:password="${database.password}"
+              p:defaultQueryTimeout="${database.query.timeout}"
+              p:initialSize="${database.initialSize}"
+              p:maxIdle="${database.maxIdle}"
+              p:maxTotal="${database.maxTotal}"
+              p:maxWaitMillis="${database.maxWaitMillis}"
+              p:fastFailValidation="${database.fastFailValidation}"
+              p:defaultAutoCommit="${database.defaultAutoCommit}"
+              p:testOnBorrow="${database.testOnBorrow}"
+              p:validationQuery="${database.validationQuery}"
+              p:removeAbandonedOnBorrow="${database.removeAbandonedOnBorrow}"
+              p:defaultTransactionIsolation="${database.defaultTransactionIsolation}"
+        />
+    </beans>
+
+    <beans profile="test">
+        <context:property-placeholder
+                location="config/db/postgresql-test.properties"
+                ignore-unresolvable="true"
+                system-properties-mode="OVERRIDE"
+        />
+        <bean id="dataSource"
+              destroy-method="close"
+              class="org.apache.commons.dbcp2.BasicDataSource"
+              p:driverClassName="${database.driverClassName}"
+              p:url="${database.url}"
+              p:username="${database.username}"
+              p:password="${database.password}"
+              p:defaultQueryTimeout="${database.query.timeout}"
+              p:initialSize="${database.initialSize}"
+              p:maxIdle="${database.maxIdle}"
+              p:maxTotal="${database.maxTotal}"
+              p:maxWaitMillis="${database.maxWaitMillis}"
+              p:fastFailValidation="${database.fastFailValidation}"
+              p:defaultAutoCommit="${database.defaultAutoCommit}"
+              p:testOnBorrow="${database.testOnBorrow}"
+              p:validationQuery="${database.validationQuery}"
+              p:removeAbandonedOnBorrow="${database.removeAbandonedOnBorrow}"
+              p:defaultTransactionIsolation="${database.defaultTransactionIsolation}"
+        />
+    </beans>
+</beans>

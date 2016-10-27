@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bridgeEventHandlerDecorator" class="com.primosoft.astman.core.ast.listener.BridgeEventHandlerDecorator"
+          scope="prototype"/>
+    <bean id="dialEventHandlerDecorator" class="com.primosoft.astman.core.ast.listener.DialEventHandlerDecorator"
+          scope="prototype"/>
+    <bean id="hangupEventHandlerDecorator" class="com.primosoft.astman.core.ast.listener.HangupEventHandlerDecorator"
+          scope="prototype"/>
+    <bean id="newCallerIdEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.NewCallerIdEventHandlerDecorator" scope="prototype"/>
+    <bean id="newChannelEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.NewChannelEventHandlerDecorator" scope="prototype"/>
+    <bean id="newExtenEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.NewExtenEventHandlerDecorator" scope="prototype"/>
+    <bean id="newStateEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.NewStateEventHandlerDecorator"
+          scope="prototype"/>
+    <bean id="originateResponseEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.OriginateResponseEventHandlerDecorator" scope="prototype"/>
+    <bean id="peerStatusEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.PeerStatusEventHandlerDecorator" scope="prototype"/>
+    <bean id="statusCompleteEventHandlerDecorator"
+          class="com.primosoft.astman.core.ast.listener.StatusCompleteEventHandlerDecorator" scope="prototype"/>
+    <bean id="varSetEventHandlerDecorator" class="com.primosoft.astman.core.ast.listener.VarSetEventHandlerDecorator"
+          scope="prototype"/>
+
+    <!--Peer status events -->
+    <bean id="registeredPeerStatusEvent" class="com.primosoft.astman.core.ast.listener.RegisteredPeerStatusEvent"
+          scope="prototype"/>
+    <bean id="unregisteredPeerStatusEvent" class="com.primosoft.astman.core.ast.listener.UnregisteredPeerStatusEvent"
+          scope="prototype"/>
+    <bean id="reachablePeerStatusEvent" class="com.primosoft.astman.core.ast.listener.ReachablePeerStatusEvent"
+          scope="prototype"/>
+    <bean id="laggedPeerStatusEvent" class="com.primosoft.astman.core.ast.listener.LaggedPeerStatusEvent"
+          scope="prototype"/>
+    <bean id="unreachablePeerStatusEvent" class="com.primosoft.astman.core.ast.listener.UnreachablePeerStatusEvent"
+          scope="prototype"/>
+    <bean id="rejectedPeerStatusEvent" class="com.primosoft.astman.core.ast.listener.RejectedPeerStatusEvent"
+          scope="prototype"/>
+    <bean id="emptyPeerStatusEvent" class="com.primosoft.astman.core.ast.listener.EmptyPeerStatusEvent"/>
+
+</beans>

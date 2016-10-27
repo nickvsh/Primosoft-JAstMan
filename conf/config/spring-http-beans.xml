@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="commandResourcePath" class="java.lang.String">
+        <constructor-arg value="/command"/>
+    </bean>
+    <bean id="startCampaignCommandPath" class="java.lang.String">
+        <constructor-arg value="/startCampaign"/>
+    </bean>
+    <bean id="servletContextHandlerOption" class="java.lang.Integer">
+        <constructor-arg value="#{servletContextHandler.SESSIONS}"/>
+    </bean>
+
+    <bean id="servletContextHandler" class="org.eclipse.jetty.servlet.ServletContextHandler"/>
+
+    <bean id="startCampaignContextServlet"
+          class="com.primosoft.astman.core.http.events.context.StartCampaignContextServlet"/>
+
+    <bean id="jettyLocalHttpServer" class="com.primosoft.astman.core.http.JettyLocalHttpServer"/>
+    <bean id="httpLocalEventsHandler" class="com.primosoft.astman.core.http.events.HttpLocalEventsHandler"/>
+    <bean id="commandServletHttpLocalEventsHandler"
+          class="com.primosoft.astman.core.http.events.CommandServletHttpLocalEventsHandler"/>
+
+</beans>

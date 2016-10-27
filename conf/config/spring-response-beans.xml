@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="blockActionContext" class="com.primosoft.astman.core.ast.socket.context.action.BlockActionContext"
+          scope="prototype"/>
+
+    <bean id="loginResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.LoginResponseAction"
+          scope="prototype"/>
+    <bean id="logoffResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.LogoffResponseAction"
+          scope="prototype"/>
+    <bean id="pingResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.PingResponseAction"
+          scope="prototype"/>
+    <bean id="getCallWaysLoadsResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.GetCallWaysLoadsResponseAction" scope="prototype"/>
+    <bean id="dialResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.DialResponseAction"
+          scope="prototype"/>
+    <bean id="callBackResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.CallBackResponseAction"
+          scope="prototype"/>
+    <bean id="getUsersOfGroupResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.GetUsersOfGroupResponseAction" scope="prototype"/>
+    <bean id="getFreeUsersOfGroupResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.GetFreeUsersOfGroupResponseAction"
+          scope="prototype"/>
+    <bean id="asteriskRXResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.AsteriskRXResponseAction" scope="prototype"/>
+    <bean id="eventContactCreatedResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.EventContactCreatedResponseAction"
+          scope="prototype"/>
+    <bean id="refrSmykUserIdResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.RefrSmykUserIdResponseAction" scope="prototype"/>
+    <bean id="getWayLoadsResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.GetWayLoadsResponseAction" scope="prototype"/>
+    <bean id="newMainAppUserStatusResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.NewMainAppUserStatusResponseAction"
+          scope="prototype"/>
+    <bean id="makeOutgoingCallResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.MakeOutgoingCallResponseAction" scope="prototype"/>
+    <bean id="setWorkAppUserStateResponseAction"
+          class="com.primosoft.astman.core.ast.socket.context.action.SetWorkAppUserStateResponseAction"
+          scope="prototype"/>
+    <bean id="gusResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.GusResponseAction"
+          scope="prototype"/>
+    <bean id="failResponseAction" class="com.primosoft.astman.core.ast.socket.context.action.FailResponseAction"/>
+
+</beans>

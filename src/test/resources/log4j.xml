@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<!DOCTYPE log4j:configuration PUBLIC
+        "-//APACHE//DTD LOG4J 1.2//EN"
+        "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="debug" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/debug.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="memory" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/memory.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="info" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/info.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="sql" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/sql.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="socket" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/socket.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="asterisk" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/asterisk.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="error" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/error.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="service" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/service.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="agi" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/agi.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="http" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/http.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-6p] [%t] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="DebugLogger">
+        <level value="ALL"/>
+        <appender-ref ref="debug"/>
+    </logger>
+    <logger name="InfoLogger">
+        <level value="ALL"/>
+        <appender-ref ref="info"/>
+    </logger>
+    <logger name="MemoryLogger">
+        <level value="ALL"/>
+        <appender-ref ref="memory"/>
+    </logger>
+    <logger name="SqlLogger">
+        <level value="ALL"/>
+        <appender-ref ref="sql"/>
+    </logger>
+    <logger name="SocketLogger">
+        <level value="ALL"/>
+        <appender-ref ref="socket"/>
+    </logger>
+    <logger name="AsteriskLogger">
+        <level value="ALL"/>
+        <appender-ref ref="asterisk"/>
+    </logger>
+    <logger name="ErrorLogger">
+        <level value="ALL"/>
+        <appender-ref ref="error"/>
+    </logger>
+    <logger name="ServiceLogger">
+        <level value="INFO"/>
+        <appender-ref ref="service"/>
+    </logger>
+    <logger name="AgiLogger">
+        <level value="INFO"/>
+        <appender-ref ref="agi"/>
+    </logger>
+    <logger name="HttpLogger">
+        <appender-ref ref="http"/>
+    </logger>
+    <!-- Log all SQL DML statements as they are executed -->
+    <!--<logger name="org.hibernate.SQL">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log all JDBC parameters -->
+    <!--<logger name="org.hibernate.type">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log all SQL DDL statements as they are executed -->
+    <!--<logger name="org.hibernate.tool.hbm2ddl">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log the state of all entities (max 20 entities) associated with the session at flush time -->
+    <!--<logger name="org.hibernate.pretty">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log all second-level cache activity -->
+    <!--<logger name="org.hibernate.cache">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log transaction related activity -->
+    <!--<logger name="org.hibernate.transaction">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log all JDBC resource acquisition -->
+    <!--<logger name="org.hibernate.jdbc">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log HQL and SQL ASTs during query parsing -->
+    <!--<logger name="org.hibernate.hql.ast.AST">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log all JAAS authorization requests -->
+    <!--<logger name="org.hibernate.secure">-->
+        <!--<level value="DEBUG"/>-->
+        <!--<appender-ref ref="sql"/>-->
+    <!--</logger>-->
+    <!-- Log everything (a lot of information, but very useful for troubleshooting) -->
+    <logger name="org.hibernate">
+        <level value="INFO"/>
+        <appender-ref ref="sql"/>
+    </logger>
+
+    <root>
+        <priority value="DEBUG"/>
+        <appender-ref ref="console"/>
+    </root>
+</log4j:configuration>

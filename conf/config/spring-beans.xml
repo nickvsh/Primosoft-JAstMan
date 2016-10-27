@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="spring-base-beans.xml"/>
+    <import resource="spring-credentials-beans.xml"/>
+    <import resource="spring-agi-beans.xml"/>
+    <import resource="spring-ast-event-beans.xml"/>
+    <import resource="spring-ast-call-beans.xml"/>
+    <import resource="spring-socket-beans.xml"/>
+    <import resource="spring-response-beans.xml"/>
+    <import resource="spring-logger-beans.xml"/>
+    <import resource="spring-http-beans.xml"/>
+
+</beans>

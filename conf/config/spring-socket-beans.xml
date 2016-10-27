@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="socketReadMechanism" class="com.primosoft.astman.core.ast.socket.SocketReadWriteMechanism"
+          scope="prototype" lazy-init="true"/>
+    <bean id="socketAcceptMechanism" class="com.primosoft.astman.core.ast.socket.SocketAcceptMechanism"
+          scope="prototype" lazy-init="true"/>
+    <bean id="asyncSocketReadWriteMechanism" class="com.primosoft.astman.core.ast.socket.AsyncSocketReadWriteMechanism"
+          scope="prototype"/>
+
+    <bean id="clientSocket" class="com.primosoft.astman.core.ast.socket.ClientSocket" scope="prototype"/>
+    <bean id="serverSocket" class="com.primosoft.astman.core.ast.socket.ServerSocket"/>
+    <bean id="socketMechanismFactory" class="com.primosoft.astman.core.ast.socket.SocketMechanismFactory"/>
+
+</beans>

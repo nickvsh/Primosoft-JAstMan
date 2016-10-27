@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="abstractLogger" class="com.primosoft.astman.core.log.AbstractLogger" abstract="true"/>
+    <bean id="debugLogger" class="com.primosoft.astman.core.log.DebugLogger" parent="abstractLogger">
+        <property name="name" value="DebugLogger"/>
+    </bean>
+    <bean id="memoryLogger" class="com.primosoft.astman.core.log.MemoryLogger" parent="abstractLogger">
+        <property name="name" value="MemoryLogger"/>
+    </bean>
+    <bean id="infoLogger" class="com.primosoft.astman.core.log.InfoLogger" parent="abstractLogger">
+        <property name="name" value="InfoLogger"/>
+    </bean>
+    <bean id="sqlLogger" class="com.primosoft.astman.core.log.SqlLogger" parent="abstractLogger">
+        <property name="name" value="SqlLogger"/>
+    </bean>
+    <bean id="socketLogger" class="com.primosoft.astman.core.log.SocketLogger" parent="abstractLogger">
+        <property name="name" value="SocketLogger"/>
+    </bean>
+    <bean id="asteriskLogger" class="com.primosoft.astman.core.log.AsteriskLogger" parent="abstractLogger">
+        <property name="name" value="AsteriskLogger"/>
+    </bean>
+    <bean id="errorLogger" class="com.primosoft.astman.core.log.ErrorLogger" parent="abstractLogger">
+        <property name="name" value="ErrorLogger"/>
+    </bean>
+    <bean id="serviceLogger" class="com.primosoft.astman.core.log.ServiceLogger" parent="abstractLogger">
+        <property name="name" value="ServiceLogger"/>
+    </bean>
+    <bean id="agiLogger" class="com.primosoft.astman.core.log.AgiLogger" parent="abstractLogger">
+        <property name="name" value="AgiLogger"/>
+    </bean>
+    <bean id="httpLogger" class="com.primosoft.astman.core.log.HttpLogger">
+        <property name="name" value="HttpLogger"/>
+    </bean>
+
+    <bean id="log4jChangeWatcherService" class="com.primosoft.astman.core.log.Log4jChangeWatcherService"/>
+    <bean id="log4jConfigurator" class="com.primosoft.astman.core.log.Log4jConfigurator"/>
+
+</beans>

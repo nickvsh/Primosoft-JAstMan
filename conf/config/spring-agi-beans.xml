@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ © PrimoCollect IT team.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="agiListener" class="com.primosoft.astman.core.ast.listener.AgiListener"/>
+    <bean id="afterCallProcAgi" class="com.primosoft.astman.core.ast.agi.AfterCallProcAgi"/>
+    <bean id="afterCallRecProcAgi" class="com.primosoft.astman.core.ast.agi.AfterCallRecProcAgi"/>
+    <bean id="beforeCallProcAgi" class="com.primosoft.astman.core.ast.agi.BeforeCallProcAgi"/>
+    <bean id="beforeCallProcRecAgi" class="com.primosoft.astman.core.ast.agi.BeforeCallRecProcAgi"/>
+    <bean id="callBackAgi" class="com.primosoft.astman.core.ast.agi.CallBackAgi"/>
+    <bean id="checkBlackListAgi" class="com.primosoft.astman.core.ast.agi.CheckBlackListAgi"/>
+    <bean id="checkLoadAgi" class="com.primosoft.astman.core.ast.agi.CheckLoadAgi"/>
+    <bean id="getNumbersAgi" class="com.primosoft.astman.core.ast.agi.GetNumbersAgi"/>
+    <bean id="setCallerIdAgi" class="com.primosoft.astman.core.ast.agi.SetCallerIdAgi"/>
+    <bean id="setChannelsAgi" class="com.primosoft.astman.core.ast.agi.SetChannelsAgi"/>
+    <bean id="setServerAgi" class="com.primosoft.astman.core.ast.agi.SetServerAgi"/>
+    <bean id="translateTransferCallerIdAgi" class="com.primosoft.astman.core.ast.agi.TranslateTransferCallerIdAgi"/>
+
+</beans>
